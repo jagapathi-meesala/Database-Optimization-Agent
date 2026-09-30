@@ -1,11 +1,34 @@
 name: recommend-indexes
 description: Generate deterministic index candidates from supplied filter, ordering, and existing-index metadata.
+
 input_schema:
   type: object
+  properties:
+    table:
+      type: string
+      description: Database table name.
+    filter_columns:
+      type: array
+      description: Columns used by query filtering.
+      items:
+        type: string
+    order_columns:
+      type: array
+      description: Columns used for query ordering.
+      items:
+        type: string
+    existing_indexes:
+      type: array
+      description: Existing indexes represented as ordered column lists.
+      items:
+        type: array
+        items:
+          type: string
   required:
     - table
     - filter_columns
     - order_columns
     - existing_indexes
+
 output_schema:
   type: object
