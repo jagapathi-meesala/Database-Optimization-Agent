@@ -1,8 +1,31 @@
 name: analyze-schema
 description: Analyze supplied schema metadata for deterministic performance-related signals.
+
 input_schema:
   type: object
+  properties:
+    tables:
+      type: array
+      description: Database table metadata to analyze.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Table name.
+          columns:
+            type: array
+            description: Column metadata for the table.
+            items:
+              type: object
+          primary_key:
+            type: string
+            description: Primary key metadata when available.
+        required:
+          - name
+          - columns
   required:
     - tables
+
 output_schema:
   type: object
