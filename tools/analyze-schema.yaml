@@ -1,0 +1,8 @@
+name: analyze-schema
+description: Analyze supplied schema metadata for deterministic performance-related signals.
+input_schema:
+  type: object
+  required:
+    - tables
+output_schema:
+  type: object

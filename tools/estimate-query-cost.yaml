@@ -1,0 +1,11 @@
+name: estimate-query-cost
+description: Estimate hourly workload cost using execution time multiplied by query frequency.
+input_schema:
+  type: object
+  required:
+    - execution_time_ms
+    - rows_examined
+    - rows_returned
+    - frequency_per_hour
+output_schema:
+  type: object

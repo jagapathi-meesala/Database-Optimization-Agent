@@ -1,0 +1,11 @@
+name: recommend-indexes
+description: Generate deterministic index candidates from supplied filter, ordering, and existing-index metadata.
+input_schema:
+  type: object
+  required:
+    - table
+    - filter_columns
+    - order_columns
+    - existing_indexes
+output_schema:
+  type: object

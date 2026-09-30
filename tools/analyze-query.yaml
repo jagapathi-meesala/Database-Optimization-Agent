@@ -1,0 +1,11 @@
+name: analyze-query
+description: Analyze supplied query workload metrics and identify deterministic performance signals.
+input_schema:
+  type: object
+  required:
+    - execution_time_ms
+    - rows_examined
+    - rows_returned
+    - frequency_per_hour
+output_schema:
+  type: object

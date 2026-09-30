@@ -1,0 +1,21 @@
+spec_version: "0.1.0"
+name: database-optimization-agent
+version: 0.1.0
+description: An agent that analyzes database workload metadata and produces deterministic optimization recommendations.
+
+skills:
+  - query-analysis
+  - index-analysis
+  - schema-analysis
+
+tools:
+  - analyze-query
+  - recommend-indexes
+  - analyze-schema
+  - estimate-query-cost
+
+tags:
+  - database
+  - optimization
+  - sql
+  - performance
