@@ -1,11 +1,30 @@
 name: analyze-query
 description: Analyze supplied query workload metrics and identify deterministic performance signals.
+
 input_schema:
   type: object
+  properties:
+    execution_time_ms:
+      type: number
+      minimum: 0
+      description: Query execution time in milliseconds.
+    rows_examined:
+      type: number
+      minimum: 0
+      description: Number of rows examined.
+    rows_returned:
+      type: number
+      minimum: 0
+      description: Number of rows returned.
+    frequency_per_hour:
+      type: number
+      minimum: 0
+      description: Approximate executions per hour.
   required:
     - execution_time_ms
     - rows_examined
     - rows_returned
     - frequency_per_hour
+
 output_schema:
   type: object
